@@ -1,0 +1,8 @@
+FROM openjdk:17-jdk-slim
+WORKDIR /server
+
+RUN curl -o server.jar https://api.papermc.io/v2/projects/paper/versions/1.20.1/builds/123/downloads/paper-1.20.1-123.jar
+
+COPY . /server
+RUN chmod +x start.sh
+CMD ["./start.sh"]
